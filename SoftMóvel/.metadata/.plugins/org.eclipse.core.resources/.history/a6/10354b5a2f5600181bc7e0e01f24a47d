@@ -1,0 +1,41 @@
+
+public class Squad {
+	private int X;
+	private int Y;
+	private int D;
+    private String ComandoInvalido;
+	private char[] mov;
+    
+    public int getX(){
+    	return this.X;
+    }
+    public void setX(int X){
+    	this.X = X;
+    }
+    public String getCI(){
+    	return this.ComandoInvalido;
+    }
+    public void setCI(String CI){
+    	this.ComandoInvalido = CI;
+    }
+    public int getY(){
+    	return this.Y;
+    }
+    public void setY(int Y){
+    	this.Y = Y;
+    }
+    public int getD(){
+    	return this.D;
+    }
+    public void setD(int D){
+    	this.D = D;
+    }
+    public char getMov(){
+    	return this.getMov();
+    }
+    public void setMov(char mov){
+    	this.mov[] = mov;  
+    }
+    
+
+}

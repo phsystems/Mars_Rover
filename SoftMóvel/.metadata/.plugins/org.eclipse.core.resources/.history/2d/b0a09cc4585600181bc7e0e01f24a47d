@@ -1,0 +1,148 @@
+public class Squad<function> {
+	private int X;
+	private int Y;
+	private char D;
+	private char[] mov;
+
+	public int getX() {
+		return this.X;
+	}
+
+	public void setX(int X) {
+		this.X = X;
+	}
+
+	public int getY() {
+		return this.Y;
+	}
+
+	public void setY(int Y) {
+		this.Y = Y;
+	}
+
+	public char getD() {
+		return this.D;
+	}
+
+	public void setD(char D) {
+		this.D = D;
+	}
+
+	public char getMov() {
+		return this.getMov();
+	}
+
+	public void setMov(char[] mov) {
+		this.mov = mov;
+	}
+
+	public void Xadd() {
+		this.X = this.X + 1;
+	}
+
+	public void Yadd() {
+		this.Y = this.Y + 1;
+	}
+
+	public void Xsub() {
+		this.X = this.X - 1;
+	}
+
+	public void Ysub() {
+		this.Y = this.Y - 1;
+	}
+
+	public void setXY(int x, int y) {
+		this.setX(x);
+		this.setY(y);
+	}
+
+	public void result() {
+		System.out.println("O Robo andou e parou na Posição");
+		System.out.println("\n");
+		System.out.println("X:");
+		System.out.println(this.getX());
+		System.out.println("\n");
+		System.out.println("Y: ");
+		System.out.println(this.getY());
+		System.out.println("\n");
+		System.out.println("Na direção:");
+		System.out.println(this.getD());
+		System.out.println("\n");
+
+	}
+
+	public void movimenta(char[] mov) {
+
+		for (char value : mov) {
+			char Dir = this.getD();
+			if (value == 'M' || value == 'R' || value == 'L') {
+
+				if (value == 'M') {
+					if (Dir == 'N') {
+						this.Ysub();
+					}
+					if (Dir == 'S') {
+						this.Yadd();
+					}
+					if (Dir == 'E') {
+						this.Xadd();
+					}
+					if (Dir == 'W') {
+						this.Xsub();
+					}
+				}
+				if (value == 'R') {
+
+					if (Dir == 'N') {
+						this.setD('E');
+					}
+					if (Dir == 'S') {
+						this.setD('W');
+					}
+					if (Dir == 'E') {
+						this.setD('S');
+					}
+					if (Dir == 'W') {
+						this.setD('N');
+					}
+				}
+				if (value == 'L') {
+
+					if (Dir == 'N') {
+						this.setD('W');
+					}
+					if (Dir == 'S') {
+						this.setD('E');
+					}
+					if (Dir == 'E') {
+						this.setD('N');
+					}
+					if (Dir == 'W') {
+						this.setD('S');
+					}
+				}
+
+			}
+		}
+	}
+
+	public void inicio(int x, int y, char D, char[] mov) {
+		this.setXY(x, y);
+		this.setD(D);
+		this.movimenta(mov);
+		this.result();
+	}
+
+	public static void main(String[] args) {
+
+		Squad robotOne = new Squad();
+		char[] M = { 'L', 'M', 'L', 'M', 'L', 'M', 'L', 'M', 'M'};
+		robo1.inicio(1, 2, 'N', M);
+		System.out.println("\n");
+		Squad robotTwo = new Squad();
+		char[] M = { 'M', 'M', 'R', 'M', 'M', 'R', 'M', 'R', 'R', 'M' };
+		robo1.inicio(3, 3, 'E', M);
+		
+	}
+}

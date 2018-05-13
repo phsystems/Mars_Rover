@@ -1,0 +1,126 @@
+import javax.lang.model.element.Element;
+
+public class Squad<function> {
+	private int X;
+	private int Y;
+	private char D;
+    private String ComandoInvalido;
+	private char[] mov;
+    
+    public int getX(){
+    	return this.X;
+    }
+    public void setX(int X){
+    	this.X = X;
+    }
+    public String getCI(){
+    	return this.ComandoInvalido;
+    }
+    public void setCI(String CI){
+    	this.ComandoInvalido = CI;
+    }
+    public int getY(){
+    	return this.Y;
+    }
+    public void setY(int Y){
+    	this.Y = Y;
+    }
+    public char getD(){
+    	return this.D;
+    }
+    public void setD(char D){
+    	this.D = D;
+    }
+    public char getMov(){
+    	return this.getMov();
+    }
+    public void setMov(char[] mov){
+    	this.mov = mov;  
+    }
+    public void Xadd(){
+        this.X = this.X + 1;
+    }
+    public void Yadd(){
+        this.Y = this.Y + 1;
+    }
+    public void Xsub(){
+           this.X = this.X - 1;
+    }
+    public void Ysub(){
+           this.Y = this.Y - 1;
+    }
+        
+    public void setXY(int x,int y){
+        this.setX(x);
+        this.setY(y);
+    }
+    
+    public void result(){
+    	   System.out.println("O Robo andou e parou na Posição");
+    	   System.out.println("\n");
+    	   System.out.println("X:");
+    	   System.out.println(this.getX());
+    	   System.out.println("\n");
+    	   System.out.println("Y: ");
+    	   System.out.println(this.getY());
+    	   System.out.println("\n");
+    	   System.out.println("Na direção:");
+    	   System.out.println(this.getD());
+    	   System.out.println("\n");
+    	   System.out.println("Comandos Invalidos:");
+    	   System.out.println(this.getCI());
+    	} 
+    public void movimenta(char[] mov){
+
+        Element.forEach (mov -> {});{      
+            D = this.getD();
+            if(value == 'M' || value == 'R' || value == 'L')
+            {
+                if(value=='M')
+                {      
+                        if(D == 'N'){this.Ysub();}
+                        if(D == 'S'){this.Yadd();}
+                        if(D == 'E'){this.Xadd();}
+                        if(D == 'W'){this.Xsub();}
+                }
+                if( value=="R")
+                {
+
+                        if(D == 'N'){this.setD('E');}
+                        if(D == 'S'){this.setD('W');}
+                        if(D == 'E'){this.setD('S');}
+                        if(D == 'W'){this.setD('N');}
+                }
+                if( value=="L")
+                {
+
+                        if(D== 'N'){this.setD('W');}
+                        if(D== 'S'){this.setD('E');}
+                        if(D== 'E'){this.setD('N');}
+                        if(D== 'W'){this.setD('S');}
+                }
+            }
+            else{
+                System.out.println("\nComando Invalido:" + value + "\n\n"); 
+                this.ComandoInvalido++;
+            }
+        }
+    }
+    public void Inicio(int x,int y ,char D, char[] mov){
+        System.out.println(this.ComandoInvalido);
+        this.setXY(x,y);
+        this.setD(D);
+        this.movimenta(mov);
+        this.result();
+    }
+    r1= new squad();
+    M=['L','L','M'];
+
+
+
+    r1->Inicio(3,3,'E',$M);
+
+    System.out.println("\n");
+
+
+}
